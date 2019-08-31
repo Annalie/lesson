@@ -1,0 +1,56 @@
+In connection to our Git and Github discussion, please take note of the following commands as I summarized everything based on the actual steps:
+
+A. When setting up the project for the 1st time, do the following commands:
+1. Create the project folder then go inside that folder:
+example:
+mkdir first-project
+cd first-project
+2. Initialize the local git repository:
+git init
+3. Configure this repository with your Github account username and email:
+example:
+git config user.name "junreycloudstrife"
+git config user.email junrey.cloudstrife@gmail.com
+4. Create the online repository with the name similar to the project folder you created in step 1:
+example:
+https://github.com/junreycloudstrife/first-project.git
+5. Link the online git repository to your local git repository:
+example:
+git remote add origin https://github.com/junreycloudstrife/first-project.git
+6. Pushing your local repository to the online repository for the 1st time:
+git push -u origin master
+
+B. When updating an existing local repository to its online repository, do the following:
+1. Pull the updates from the online repository:
+git pull origin master
+2. Create a new file or update an existing file:
+example sample.txt:
+3. Check the status of the repository:
+git status
+4. Add the file:
+git add sample.txt
+5. Commit the file with comments:
+git commit -m "Initial commit"
+6. Push the local update to the online repository
+git push origin master or git push
+7. You may use git status every time you execute the commands above.
+
+C. When working with your project on another computer, do the following:
+1. Clone the project on that computer:
+example:
+git clone https://github.com/junreycloudstrife/first-project.git
+2. Go inside the project folder:
+example:
+cd first-folder
+3. Apply Steps 2-7 of part B above
+
+D. The Github user account will be stored on the computer. Every time a new user uses that computer will cause conflict on the Github account. To fix this, do the following:
+1. Open the Credential Manager by typing it on the search option of the computer then click it.
+2. Between Web Credential and Windows Credential, choose Windows Credential.
+3. Under Windows Credential look for Generic Credential.
+4. Under Generic Credential look for git:https://github account then click.
+5. Click the Remove link to remove the credential.
+6. You can now proceed to do either of the steps above (A, B  or C)
+
+E. When you encounter errors regarding SSL certificates, type this command:
+git config --global http.sslVerify false
